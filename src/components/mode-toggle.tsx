@@ -1,24 +1,7 @@
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
 
 export function ModeToggle({ onToggle }: { onToggle?: () => void }) {
-  const { theme, setTheme } = useTheme();
-
-  // Determine current theme (resolve system theme)
-  const getCurrentTheme = () => {
-    if (theme === "system") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-    return theme;
-  };
-
-  const currentTheme = getCurrentTheme();
-
   const toggleTheme = () => {
-    // const newTheme = currentTheme === "dark" ? "light" : "dark";
-    // setTheme(newTheme);
     onToggle?.();
   };
 

@@ -22,12 +22,6 @@ export function Hero({ isLoaderComplete }: HeroProps) {
 
   const { theme, setTheme } = useTheme();
 
-  const getThemeBackground = (theme: "light" | "dark") => {
-    return theme === "dark"
-      ? "hsl(240 10% 3.9%)" // <-- your dark background
-      : "hsl(0 0% 100%)"; // <-- your light background
-  };
-
   // Determine the actual theme (resolve system theme)
   const getCurrentTheme = () => {
     if (theme === "system") {
